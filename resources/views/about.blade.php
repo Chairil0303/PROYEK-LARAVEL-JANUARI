@@ -11,5 +11,6 @@
     <a href="">contact</a>
 
     <h1>Halaman About</h1>
+    <h3>Namaku adalah {{ $nama }}</h3>
 </body>
 </html>

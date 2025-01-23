@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Proyek</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body{
+            background-color:grey;
+        }
+    </style>
 </head>
 <body>
     <a href="">home</a>
