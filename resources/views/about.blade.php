@@ -8,7 +8,8 @@
 <body>
     <a href="">home</a>
     <a href="about">about</a>
-    <a href="">contact</a>
+    <a href="blog">blog</a>
+    <a href="contact">contact</a>
 
     <h1>Halaman About</h1>
     <h3>Namaku adalah {{ $nama }}</h3>
