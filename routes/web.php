@@ -23,7 +23,19 @@ Route::get('/about', function () {
 });
 
 Route::get('/blog', function () {
-    return view('blog', ['title'=>'blog']);
+    return view('blog', ['title'=>'blog', posts => [
+        [
+            'title' => 'Judul artikel 1',
+            'author' => 'Chairil syahrain',
+            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolor autem, tempora Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, possimus totam.'
+        ],
+        [
+            'title' => 'Judul artikel 2',
+            'author' => 'Chairil syahrain',
+            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolor autem, tempora Lorem ipsum dolor sit amet.'
+        ]
+    ] 
+]);
 });
 
 Route::get('/contact', function () {
