@@ -10,7 +10,7 @@
                 <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <x-navlink href="/" :active="request()->is('/')">Home</x-navlink>
-                <x-navlink href="/blog" :active="request()->is('blog')">Blog</x-navlink>
+                <x-navlink href="/posts" :active="request()->is('posts')">Blog</x-navlink>
                 <x-navlink href="/about" :active="request()->is('about')">About</x-navlink>
                 <x-navlink href="/contact" :active="request()->is('contact')" >Contact</x-navlink>
                 </div>
@@ -84,8 +84,11 @@
         <div x-show="isOpen" class="md:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
-            <a href="/blog" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Blog</a>
+            <x-navlink href="/" :active="request()->is('/')">Home</x-navlink>
+            <x-navlink href="/posts" :active="request()->is('posts')">Blog</x-navlink>
+            <x-navlink href="/about" :active="request()->is('about')">About</x-navlink>
+            <x-navlink href="/contact" :active="request()->is('contact')">Contact</x-navlink>
+            <a href="/posts" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Blog</a>
             <a href="/about" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
             <a href="/contact" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
         </div>

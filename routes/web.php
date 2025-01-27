@@ -22,8 +22,8 @@ Route::get('/about', function () {
     return view('about',['nama' => 'chairil bisa'], ['title'=>'about']);
 });
 
-Route::get('/blog', function () {
-    return view('blog', ['title'=>'blog', posts => [
+Route::get('/posts', function () {
+    return view('posts', ['title'=>'Blog', 'posts' => [
         [
             'title' => 'Judul artikel 1',
             'author' => 'Chairil syahrain',
