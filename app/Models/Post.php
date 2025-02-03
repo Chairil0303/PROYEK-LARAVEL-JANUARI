@@ -1,6 +1,7 @@
 <?php 
 
 namespace App\Models;
+use Illuminate\Support\Arr;
 
 
 
@@ -24,6 +25,13 @@ class Post
             'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolor autem, tempora Lorem ipsum dolor sit amet.'
         ]
     ] ;
+    }
+
+    public static function find($slug):array
+    {
+        return Arr::first(static::all(), function($post) use($slug){
+        return $post['slug'] == $slug ;
+    });
     }
 }
 
