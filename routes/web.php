@@ -2,6 +2,30 @@
 
 use Illuminate\Support\Facades\Route;
 
+class Post 
+{
+    public static function all()
+    {
+        return [
+        [
+            'id' => '1',
+            'slug' => 'judul-artikel-1',
+            'title' => 'Judul artikel 1',
+            'author' => 'Chairil syahrain',
+            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolor autem, tempora Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, possimus totam.'
+        ],
+        [
+            'id' => '2',
+            'slug' => 'judul-artikel-2',
+            'title' => 'Judul artikel 2',
+            'author' => 'Chairil syahrain',
+            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolor autem, tempora Lorem ipsum dolor sit amet.'
+        ]
+    ] ;
+    }
+}
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,45 +47,13 @@ Route::get('/about', function () {
 });
 
 Route::get('/posts', function () {
-    return view('posts', ['title'=>'Blog', 'posts' => [
-        [
-            'id' => '1',
-            'slug' => 'judul-artikel-1',
-            'title' => 'Judul artikel 1',
-            'author' => 'Chairil syahrain',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolor autem, tempora Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, possimus totam.'
-        ],
-        [
-            'id' => '2',
-            'slug' => 'judul-artikel-2',
-            'title' => 'Judul artikel 2',
-            'author' => 'Chairil syahrain',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolor autem, tempora Lorem ipsum dolor sit amet.'
-        ]
-    ] 
-]);
+    return view('posts', ['title'=>'Blog', 'posts' => Post::all() ]);
 });
 
 Route::get('/posts/{slug}', function ($slug) {
     // return view('contact',['title'=>'contact']);
-    $posts = [
-        [
-            'id' => '1',
-            'slug' => 'judul-artikel-1',
-            'title' => 'Judul artikel 1',
-            'author' => 'Chairil syahrain',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolor autem, tempora Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, possimus totam.'
-        ],
-        [
-            'id' => '2',
-            'slug' => 'judul-artikel-2',
-            'title' => 'Judul artikel 2',
-            'author' => 'Chairil syahrain',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolor autem, tempora Lorem ipsum dolor sit amet.'
-        ]
-    ];
     
-    $post = Arr::first($posts, function($post) use($slug){
+    $post = Arr::first(Post::all(), function($post) use($slug){
         return $post['slug'] == $slug ;
     });
 
