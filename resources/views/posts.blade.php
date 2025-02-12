@@ -17,7 +17,7 @@
                     </a>| {{$post->created_at->format('j F Y')}}
                 </div>
         <p class="my-4 font-light">{{Str::limit($post['body'],100 )}}</p>
-        <a href="posts/{{$post['slug']}}" class="font-medium text-blue-500 hover:underline text-base text-gray-500">Read more &raquo </a>
+        <a href="/posts/{{$post['slug']}}" class="font-medium text-blue-500 hover:underline text-base text-gray-500">Read more &raquo </a>
     </article>
     @endforeach
     
