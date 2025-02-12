@@ -7,7 +7,10 @@
             </h2> 
             <div class="text-base text-gray-500">
                 <a href="">{{$post->author->name}}
-                    </a> | {{$post->created_at->format('j F Y')}}
+                    </a>| In 
+                    <a href="/categories/{{$post->category->slug}}" class="hover:underline text-base text-gray-500">{{$post->category->name}}
+                    </a>
+                    | {{$post->created_at->format('j F Y')}}
                 </div>
         <p class="my-4 font-light">{{$post['body'], }}</p>
         <a href="/posts" class="font-medium text-blue-500 hover:underline">Back to posts &laquo </a>

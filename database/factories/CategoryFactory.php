@@ -23,10 +23,8 @@ class CategoryFactory extends Factory
     {
         return [
             //
-            'name_category'=>fake()->sentence(),
-            // 'author_id'=>User::factory(),
-            'slug_category' =>Str::slug(fake()->sentence()),
-            // 'body'=>fake()->text()
+            'name'=>fake()->sentence(rand(1,2),false),
+            'slug' =>Str::slug(fake()->sentence(rand(1,2),false)),
         ];
     }
 }

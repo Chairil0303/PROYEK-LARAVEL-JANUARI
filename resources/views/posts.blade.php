@@ -12,7 +12,9 @@
             <div >
                 By
                 <a class="hover:underline text-base text-gray-500" href="/authors/{{$post->author->username}}">{{$post->author->name}}
-                    </a> | {{$post->created_at->format('j F Y')}}
+                    </a>  | In 
+                    <a href="/categories/{{$post->category->slug}}" class="hover:underline text-base text-gray-500">{{$post->category->name}}
+                    </a>| {{$post->created_at->format('j F Y')}}
                 </div>
         <p class="my-4 font-light">{{Str::limit($post['body'],100 )}}</p>
         <a href="posts/{{$post['slug']}}" class="font-medium text-blue-500 hover:underline text-base text-gray-500">Read more &raquo </a>
