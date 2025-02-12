@@ -4,15 +4,16 @@ namespace Database\Factories;
 
 use App\Models\User;
 use App\Models\Category;
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
  */
-class PostFactory extends Factory
+class CategoryFactory extends Factory
 {
+    protected $model = Category::class; 
     /**
      * Define the model's default state.
      *
@@ -22,11 +23,10 @@ class PostFactory extends Factory
     {
         return [
             //
-            'title'=>fake()->sentence(),
-            'author_id'=>User::factory(),
-            'category_id'=>Category::factory(),
-            'slug' =>Str::slug(fake()->sentence()),
-            'body'=>fake()->text()
+            'name_category'=>fake()->sentence(),
+            // 'author_id'=>User::factory(),
+            'slug_category' =>Str::slug(fake()->sentence()),
+            // 'body'=>fake()->text()
         ];
     }
 }
