@@ -20,11 +20,15 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         
+        $this->call([
+            CategorySeeder::class,
+            UserSeeder::class
+        ]);
+
 
         Post::factory(100)->recycle([
-            Category::factory(3)->create(),
-            $chairil,
-            
+            Category::all(),
+            User::all()
         ])->create();
     }
 }
