@@ -9,6 +9,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Post extends Model
 {
+
+    // eager loading
+    protected $with = ['author','category'];
+
     use HasFactory;
     protected $fillable = ['title','author_id','category_id','slug','body'];
 
